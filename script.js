@@ -6,18 +6,20 @@ const complimentary = document.querySelector('#complimentary');
 const modal = document.querySelector('#modal');
 
 function changeGradient(e) {
-  if (degs >= 10000) {
+  if (degs >= 10000) { // stop the degrees value from getting too high
     degs = 25;
   }
+  // define X and Y
   let X;
   let Y;
-  if (e.touches) {
+  if (e.touches) { // check for mobile value
     X = Math.floor(e.touches[0].clientX);
     Y = Math.floor(e.touches[0].clientY);
   } else {
-    X = e.x;
+    X = e.x; // fall back to desktop browser values
     Y = e.y;
   }
+  // do all the things
   primary.innerHTML = `hsl(${X}, 100%, 49%)`;
   gradient.style.setProperty('--primary', `hsl(${X}, 100%, 49%)`);
   degrees.innerHTML = `0.${degs}turn`;

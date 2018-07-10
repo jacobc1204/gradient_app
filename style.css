@@ -23,7 +23,11 @@ body {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 1rem;
+}
+
+h2 {
+    font-size: 0.8rem;
 }
 
 header {
@@ -53,10 +57,4 @@ header * {
             justify-content: center;
     -ms-flex-line-pack: center;
         align-content: center;
-}
-
-@media screen and (max-width: 800px) {
-    h1 {
-        font-size: 0.5rem;
-    }
 }
