@@ -1,0 +1,43 @@
+:root {
+    --primary: hsl(265, 100%, 49%);
+    --complimentary: hsl(59, 100%, 49%);
+    --degs: 0.25turn;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--degs)), color-stop(var(--primary)), to(var(--complimentary)));
+    background: linear-gradient(var(--degs), var(--primary), var(--complimentary));
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-areas: 'primary degrees complementary';
+    font-family: sans-serif;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+#modal {
+    position: absolute;
+    display: grid;
+    height: 45%;
+    width: 70%;
+    background: #ebebeb;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 0.5rem;
+    }
+}
