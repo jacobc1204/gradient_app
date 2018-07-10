@@ -22,14 +22,6 @@ body {
             align-items: center;
 }
 
-h1 {
-    font-size: 1rem;
-}
-
-h2 {
-    font-size: 0.8rem;
-}
-
 header {
     grid-row: 1;
     grid-column: 1 / -1;
@@ -48,6 +40,8 @@ header * {
 
 #modal {
     position: absolute;
+    left: 15%;
+    top: 35%;
     display: grid;
     height: 45%;
     width: 70%;
@@ -57,4 +51,14 @@ header * {
             justify-content: center;
     -ms-flex-line-pack: center;
         align-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 0.8rem;
+    }
 }
