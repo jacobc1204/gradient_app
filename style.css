@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+
 :root {
     --primary: hsl(265, 100%, 49%);
     --complimentary: hsl(59, 100%, 49%);
@@ -10,9 +12,10 @@ body {
     background: -webkit-gradient(linear, left top, left bottom, from(var(--degs)), color-stop(var(--primary)), to(var(--complimentary)));
     background: linear-gradient(var(--degs), var(--primary), var(--complimentary));
     display: grid;
+    grid-template-rows: auto 1fr;
     grid-template-columns: repeat(5, auto);
     grid-template-areas: 'primary degrees complementary';
-    font-family: sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     justify-items: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -21,6 +24,22 @@ body {
 
 h1 {
     font-size: 2rem;
+}
+
+header {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 100%;
+    height: 70px;
+    justify-items: end;
+    align-items: center;
+    background: #ebebeb;
+}
+
+header * {
+    margin: 0 10px 0 10px;
 }
 
 #modal {

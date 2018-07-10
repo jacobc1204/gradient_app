@@ -6,6 +6,9 @@ const complimentary = document.querySelector('#complimentary');
 const modal = document.querySelector('#modal');
 
 function changeGradient(e) {
+  if (degs >= 10000) {
+    degs = 25;
+  }
   let X;
   let Y;
   if (e.touches) {
