@@ -1,12 +1,15 @@
 const gradient = document.querySelector('body');
-let degs = 36;
 const primary = document.querySelector('#primary');
 const degrees = document.querySelector('#degrees');
 const complimentary = document.querySelector('#complimentary');
 const modal = document.querySelector('#modal');
+const pastel = document.querySelector('#pastel');
+const normal = document.querySelector('#normal');
+let degs = 25;
+let light = 50;
 
 function changeGradient(e) {
-  if (degs >= 10000) { // stop the degrees value from getting too high
+  if (degs >= 100) { // stop the degrees value from getting too high
     degs = 25;
   }
   // define X and Y
@@ -20,16 +23,17 @@ function changeGradient(e) {
     Y = e.y;
   }
   // do all the things
-  primary.innerHTML = `hsl(${X}, 100%, 49%)`;
-  gradient.style.setProperty('--primary', `hsl(${X}, 100%, 49%)`);
+  primary.innerHTML = `hsl(${X}, 100%, ${light}%)`;
+  gradient.style.setProperty('--primary', `hsl(${X}, 100%, ${light}%)`);
   degrees.innerHTML = `0.${degs}turn`;
   gradient.style.setProperty('--degs', `0.${degs}turn`);
-  complimentary.innerHTML = `hsl(${Y}, 100%, 49%)`;
-  gradient.style.setProperty('--complimentary', `hsl(${Y}, 100%, 49%)`);
-  degs += 36;
+  complimentary.innerHTML = `hsl(${Y}, 100%, ${light}%)`;
+  gradient.style.setProperty('--complimentary', `hsl(${Y}, 100%, ${light}%)`);
+  degs++;
 }
 
 window.addEventListener('mousemove', changeGradient);
-window.addEventListener('touchstart', changeGradient);
-window.addEventListener('touchmove', changeGradient);
+window.addEventListener('touchstart', changeGradient); // mobile movements
 modal.addEventListener('click', () => { modal.style.display = 'none'; });
+pastel.addEventListener('click', () => { light = 80; }); // switch between pastel and normal
+normal.addEventListener('click', () => { light = 50; });
