@@ -34,6 +34,7 @@ function changeGradient(e) {
 
 window.addEventListener('mousemove', changeGradient);
 window.addEventListener('touchstart', changeGradient); // mobile movements
+window.addEventListener('touchmove', changeGradient);
 modal.addEventListener('click', () => { modal.style.display = 'none'; });
 pastel.addEventListener('click', () => { light = 80; }); // switch between pastel and normal
 normal.addEventListener('click', () => { light = 50; });
