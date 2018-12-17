@@ -1,4 +1,4 @@
-const gradient = document.querySelector('body');
+const gradient = document.querySelector('.gradient');
 const primary = document.querySelector('#primary');
 const degrees = document.querySelector('#degrees');
 const complimentary = document.querySelector('#complimentary');
@@ -32,9 +32,9 @@ function changeGradient(e) {
   degs++;
 }
 
-window.addEventListener('mousemove', changeGradient);
-window.addEventListener('touchstart', changeGradient); // mobile movements
-window.addEventListener('touchmove', changeGradient);
+gradient.addEventListener('mousemove', changeGradient);
+gradient.addEventListener('touchstart', changeGradient); // mobile movements
+gradient.addEventListener('touchmove', changeGradient);
 modal.addEventListener('click', () => { modal.style.display = 'none'; });
 pastel.addEventListener('click', () => { light = 80; }); // switch between pastel and normal
 normal.addEventListener('click', () => { light = 50; });
